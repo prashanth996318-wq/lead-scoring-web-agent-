@@ -61,6 +61,7 @@ data = [
     }
 ]
 
+
 df = pd.DataFrame(data)
 df["Probability"] = df.apply(score_lead, axis=1)
 df = df.sort_values("Probability", ascending=False)
