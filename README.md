@@ -62,9 +62,31 @@ data = [
 ]
 
 
+---
+
+## STEP 5 — RUN THE CODE LOCALLY
+
+On your laptop:
+
+```bash
+pip install pandas
+python main.py
+
 df = pd.DataFrame(data)
 df["Probability"] = df.apply(score_lead, axis=1)
 df = df.sort_values("Probability", ascending=False)
 
 df.to_csv("output/leads.csv", index=False)
 print("Output generated: output/leads.csv")
+
+
+---
+
+## STEP 5 — RUN THE CODE LOCALLY
+
+On your laptop:
+
+```bash
+pip install pandas
+python main.py
+
