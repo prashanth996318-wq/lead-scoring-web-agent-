@@ -64,7 +64,7 @@ data = [
 
 ---
 
-## STEP 5 — RUN THE CODE LOCALLY
+##  RUN THE CODE LOCALLY
 
 On your laptop:
 
