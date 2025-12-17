@@ -6,8 +6,9 @@ lead-scoring-web-agent/
 ├── main.py
 ├── scoring.py
 └── output/
-#requirements.txt
+# requirements.txt
 pandas
+# scoring.py
 python
 def score_lead(row):
     score = 0
@@ -31,6 +32,10 @@ def score_lead(row):
         score += 40
 
     return min(score, 100)
+# main.py
+import pandas as pd
+from scoring import score_lead
+
 import pandas as pd
 from scoring import score_lead
 
@@ -60,6 +65,13 @@ data = [
         "LinkedIn": "https://linkedin.com/in/johnsmith"
     }
 ]
+
+df = pd.DataFrame(data)
+df["Probability"] = df.apply(score_lead, axis=1)
+df = df.sort_values("Probability", ascending=False)
+
+df.to_csv("output/leads.csv", index=False)
+print("Output generated: output/leads.csv")
 
 
 ---
